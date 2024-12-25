@@ -2,6 +2,19 @@ import { defineConfig } from 'vite';
 import mkcert from 'vite-plugin-mkcert';
 
 export default defineConfig({
-  server: { https: true, host: true },
-  plugins: [mkcert()],
+  base: '/myvr/', // Đường dẫn gốc của repository GitHub Pages
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        login: './login.html',
+        trangchu: './trangchu.html'
+      }
+    }
+  },
+  server: {
+    https: true,
+    host: true
+  },
+  plugins: [mkcert()]
 });
