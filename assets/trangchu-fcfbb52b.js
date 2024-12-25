@@ -1,64 +1,64 @@
 (function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))r(s);new MutationObserver(s=>{for(const i of s)if(i.type==="childList")for(const n of i.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&r(n)}).observe(document,{childList:!0,subtree:!0});function a(s){const i={};return s.integrity&&(i.integrity=s.integrity),s.referrerPolicy&&(i.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?i.credentials="include":s.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(s){if(s.ep)return;s.ep=!0;const i=a(s);fetch(s.href,i)}})();var A={exports:{}};(function(t,e){(function(r,s){t.exports=s()})(window,function(){return function(a){var r={};function s(i){if(r[i])return r[i].exports;var n=r[i]={i,l:!1,exports:{}};return a[i].call(n.exports,n,n.exports,s),n.l=!0,n.exports}return s.m=a,s.c=r,s.d=function(i,n,o){s.o(i,n)||Object.defineProperty(i,n,{enumerable:!0,get:o})},s.r=function(i){typeof Symbol<"u"&&Symbol.toStringTag&&Object.defineProperty(i,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(i,"__esModule",{value:!0})},s.t=function(i,n){if(n&1&&(i=s(i)),n&8||n&4&&typeof i=="object"&&i&&i.__esModule)return i;var o=Object.create(null);if(s.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:i}),n&2&&typeof i!="string")for(var l in i)s.d(o,l,(function(m){return i[m]}).bind(null,l));return o},s.n=function(i){var n=i&&i.__esModule?function(){return i.default}:function(){return i};return s.d(n,"a",n),n},s.o=function(i,n){return Object.prototype.hasOwnProperty.call(i,n)},s.p="",s(s.s="./index.js")}({"./index.js":function(a,r,s){var i=AFRAME.utils.styleParser;if(typeof AFRAME>"u")throw new Error("Component attempted to register before AFRAME was available.");AFRAME.registerComponent("event-set",{schema:{default:"",parse:function(o){return i.parse(o)}},multiple:!0,init:function(){this.eventHandler=null,this.eventName=null},update:function(o){this.removeEventListener(),this.updateEventListener(),this.addEventListener()},remove:function(){this.removeEventListener()},pause:function(){this.removeEventListener()},play:function(){this.addEventListener()},updateEventListener:function(){var o=this,l=this.data,m=this.el,g,u,f;g=l._event||this.id,u=l._target,f=u?m.sceneEl.querySelector(u):m,this.eventName=g;var b=function(){var d;for(d in l)d==="_event"||d==="_target"||AFRAME.utils.entity.setComponentProperty.call(o,f,d,l[d])};isNaN(l._delay)?this.eventHandler=b:this.eventHandler=function(){setTimeout(b,parseFloat(l._delay))}},addEventListener:function(){this.el.addEventListener(this.eventName,this.eventHandler)},removeEventListener:function(){this.el.removeEventListener(this.eventName,this.eventHandler)}})}})})})(A);AFRAME.registerTemplate("assets",()=>html`
     <a-sub-assets>
       <!-- Global -->
-      <a-asset-item id="scene" src="/assets/models/scene.gltf"></a-asset-item>
-      <img id="clouds" src="/assets/img/clouds.png" />
+      <a-asset-item id="scene" src="./assets/models/scene.gltf"></a-asset-item>
+      <img id="clouds" src="./assets/img/clouds.png" />
       <a-asset-item
         id="Roboto"
         src="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/fonts/helvetiker_bold.typeface.json"
       ></a-asset-item>
       <audio
         id="backgroundSound"
-        src="/assets/sounds/suburb.wav"
+        src="./assets/sounds/suburb.wav"
         preload
       ></audio>
-      <audio id="click" src="/assets/sounds/click.wav" preload></audio>
+      <audio id="click" src="./assets/sounds/click.wav" preload></audio>
       <!-- Global -->
       <!-- Start Screen -->
-      <a-asset-item id="text" src="/assets/models/text.gltf"></a-asset-item>
+      <a-asset-item id="text" src="./assets/models/text.gltf"></a-asset-item>
       <!-- Start Screen -->
       <!-- Game Field -->
-      <audio id="glassHit" src="/assets/sounds/glass-hit.wav" preload></audio>
+      <audio id="glassHit" src="./assets/sounds/glass-hit.wav" preload></audio>
       <audio
         id="plasticHit"
-        src="/assets/sounds/plastic-hit.wav"
+        src="./assets/sounds/plastic-hit.wav"
         preload
       ></audio>
-      <audio id="metalHit" src="/assets/sounds/metal-hit.wav" preload></audio>
+      <audio id="metalHit" src="./assets/sounds/metal-hit.wav" preload></audio>
       <audio
         id="organicHit"
-        src="/assets/sounds/plastic-hit.wav"
+        src="./assets/sounds/plastic-hit.wav"
         preload
       ></audio>
-      <audio id="paperHit" src="/assets/sounds/plastic-hit.wav" preload></audio>
-      <audio id="levelUp" src="/assets/sounds/level-up.wav" preload></audio>
-      <audio id="fail" src="/assets/sounds/fail.wav" preload></audio>
+      <audio id="paperHit" src="./assets/sounds/plastic-hit.wav" preload></audio>
+      <audio id="levelUp" src="./assets/sounds/level-up.wav" preload></audio>
+      <audio id="fail" src="./assets/sounds/fail.wav" preload></audio>
       <a-asset-item
         id="glass"
-        src="/assets/models/glass_bottle.gltf"
+        src="./assets/models/glass_bottle.gltf"
       ></a-asset-item>
-      <a-asset-item id="metal" src="/assets/models/can.gltf"></a-asset-item>
+      <a-asset-item id="metal" src="./assets/models/can.gltf"></a-asset-item>
       <a-asset-item
         id="plastic"
-        src="/assets/models/plastic_canister.gltf"
+        src="./assets/models/plastic_canister.gltf"
       ></a-asset-item>
-      <a-asset-item id="organic" src="/assets/models/apple.gltf"></a-asset-item>
+      <a-asset-item id="organic" src="./assets/models/apple.gltf"></a-asset-item>
       <a-asset-item
         id="paper"
-        src="/assets/models/carton_box.gltf"
+        src="./assets/models/carton_box.gltf"
       ></a-asset-item>
       <a-asset-item
         id="trash-bin"
-        src="/assets/models/trash_bin.gltf"
+        src="./assets/models/trash_bin.gltf"
       ></a-asset-item>
-      <a-asset-item id="banner" src="/assets/models/banner.gltf"></a-asset-item>
-      <img id="sign" src="/assets/img/recycle-sign.png" />
-      <img id="heart" src="/assets/img/heart.jpg" />
-      <img id="trashman" src="/assets/img/trashman.jpg" />
+      <a-asset-item id="banner" src="./assets/models/banner.gltf"></a-asset-item>
+      <img id="sign" src="./assets/img/recycle-sign.png" />
+      <img id="heart" src="./assets/img/heart.jpg" />
+      <img id="trashman" src="./assets/img/trashman.jpg" />
       <!-- Game Field -->
       <!-- How To Play -->
-      <img id="dsktp" src="/assets/img/controls-dsktp.png" />
-      <img id="hdst" src="/assets/img/controls-hdst.png" />
+      <img id="dsktp" src="./assets/img/controls-dsktp.png" />
+      <img id="hdst" src="./assets/img/controls-hdst.png" />
       <!-- How To Play -->
     </a-sub-assets>
   `);AFRAME.registerTemplate("mixins",()=>html`
